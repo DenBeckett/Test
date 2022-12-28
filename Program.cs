@@ -4,18 +4,22 @@
 //string rows = Console.ReadLine();
 //array = rows.Split(" ");
 
-string[] resultArray = new string[array.Length];
-int size = 0;
-foreach (string row in array)
-{
-    if (row.Length <= 3)
-    {
-        resultArray[size] = row;
-        size += 1;
-    }
-}
+PrintArray(CheckArray(array));
 
-PrintArray(resultArray);
+string[] CheckArray(string[] array)
+{
+    string[] resultArray = new string[array.Length];
+    int size = 0;
+    foreach (string row in array)
+    {
+        if (row.Length <= 3)
+        {
+            resultArray[size] = row;
+            size += 1;
+        }
+    }
+    return resultArray;
+}
 
 void PrintArray(string[] array)
 {
